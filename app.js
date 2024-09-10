@@ -18,7 +18,7 @@ const sequelize = require('./util/database.js');
 const User = require('./models/user.js');
 const Expense = require('./models/expense.js');
 const Order = require('./models/order.js');
-const Forgotpassword = require('./models/forget-password.js');
+const Forgotpassword = require('./models/forgot-password.js');
 
 // Import routes
 const userRoutes = require('./routes/user.js');

@@ -3,7 +3,7 @@ const Sib = require('sib-api-v3-sdk');
 const bcrypt = require('bcrypt');
 
 const User = require('../models/user');
-const Forgotpassword = require('../models/forget-password');
+const Forgotpassword = require('../models/forgot-password');
 
 async function sendResetPasswordEmail(id) {
     const Client = Sib.ApiClient.instance;
