@@ -18,8 +18,7 @@ const sequelize = require('./util/database.js');
 const User = require('./models/user.js');
 const Expense = require('./models/expense.js');
 const Order = require('./models/order.js');
-const Forgotpassword = require('./models/forgot-password.js');
-const Download = require('./models/download.js');
+const Forgotpassword = require('./models/forget-password.js');
 
 // Import routes
 const userRoutes = require('./routes/user.js');
@@ -47,9 +46,6 @@ Order.belongsTo(User);
 
 User.hasMany(Forgotpassword);
 Forgotpassword.belongsTo(User);
-
-User.hasMany(Download);
-Download.belongsTo(User);
 
 const PORT = process.env.PORT || 3000;
 
