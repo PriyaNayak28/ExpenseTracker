@@ -1,3 +1,6 @@
+
+
+
 function addExpense(event) {
     event.preventDefault();
 
@@ -66,23 +69,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 })
-window.addEventListener("DOMContentLoaded", () => {
-
-    const token = localStorage.getItem('token')
-    const decodeToken = parseJwt(token)
-    console.log(decodeToken)
-
-    axios.get(`http://localhost:3000/expense/download-expense`, { headers: { "Authorization": token } })
-        .then((response) => {
-            console.log(response)
-            for (var i = 0; i < response.data.allExpenses.length; i++) {
-                displayfile(response.data.allExpenses[i])
-            }
-
-        }).catch((error) => {
-            console.log(error)
-        })
-})
 
 function display(obj) {
 
@@ -98,18 +84,6 @@ function display(obj) {
                         </li>`
     parentElem.innerHTML = parentElem.innerHTML + childElem;
 }
-
-// function displayfile(obj) {
-
-
-//     const parentElem = document.getElementById('file-list');
-//     const childElem = `<li id=${obj.id}> Filename: ${obj.name} - <a href='${obj.link}'>Download Link</a>
-
-//                         </li>`
-//     parentElem.innerHTML = parentElem.innerHTML + childElem;
-
-// }
-
 
 //delete button
 function deleteExpense(e, expenseId) {
@@ -165,26 +139,6 @@ function removeUserfromscreen(userId) {
 
 
 }
-// function download() {
-//     const token = localStorage.getItem('token')
-//     axios.get('http://localhost:3000/expense/download', { headers: { "Authorization": token } })
-//         .then((response) => {
-//             if (response.status === 201) {
-//                 var a = document.createElement("a");
-//                 a.href = response.data.fileURL;
-//                 a.download = "myexpense.csv";
-//                 a.click();
-
-//             } else {
-//                 throw new Error(response.data.message)
-//             }
-
-//         })
-//         .catch((err) => {
-//             showError(err)
-//         });
-// }
-
 
 document.getElementById('rzp-button1').onclick = async function (e) {
     const token = localStorage.getItem('token')
