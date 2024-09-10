@@ -27,6 +27,6 @@ function login(event) {
 }
 
 function forgotpassword() {
-    window.location.href = "./forget-password.html";
+    window.location.href = "./password.html";
 }
 

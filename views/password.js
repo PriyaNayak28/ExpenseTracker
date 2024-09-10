@@ -11,7 +11,6 @@ function forgotpassword(e) {
     axios.post('http://localhost:3000/password/forgotpassword', userDetails).then(response => {
         if (response.status === 202) {
             document.body.innerHTML += '<div style="color:red;">Mail Successfuly sent <div>'
-            window.location.href = 'signin.html';
         } else {
             throw new Error('Something went wrong!!!')
         }
